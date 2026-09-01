@@ -53,6 +53,7 @@ pipeline {
                     whoami
                     sudo usermod -aG docker jenkins || true
                     sudo usermod -aG docker ubuntu || true
+                    newgrp docker
 
                     # Check Docker service
                     sudo systemctl start docker
