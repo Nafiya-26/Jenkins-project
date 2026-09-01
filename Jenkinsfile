@@ -47,7 +47,7 @@ pipeline {
                 sh '''
                     echo "======================================"
                     echo "Configuring Docker access"
-                    echo "======================================"
+                    echo "====================================="
 
                     # Add Jenkins user to Docker group
                     sudo usermod -aG docker jenkins || true
