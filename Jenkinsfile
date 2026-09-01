@@ -91,44 +91,34 @@ pipeline {
         }
 
         stage('Validate') {
-            steps {
-                sh '''
-                    echo "======================================"
-                    echo "Validating Application"
-                    echo "======================================"
+    steps {
+        sh '''
+            echo "======================================"
+            echo "Validating Application"
+            echo "======================================"
 
-                    sleep 10
+            sleep 5
 
-                    echo "Container status:"
-                    docker ps -a \
-                        --filter name=${CONTAINER_NAME}
+            echo "Container status:"
+            docker ps -a --filter name=sample-app-container
 
-                    echo "Container logs:"
-                    docker logs ${CONTAINER_NAME} --tail 50
+            echo "Checking application..."
 
-                    echo "Checking container..."
+            if curl -f http://localhost:5000; then
+                echo "Application is responding successfully!"
+            else
+                echo "Application returned an error!"
+                echo "======================================"
+                echo "Container logs:"
+                echo "======================================"
+                docker logs sample-app-container --tail 100
+                exit 1
+            fi
 
-                    RUNNING=$(docker inspect \
-                        -f '{{.State.Running}}' \
-                        ${CONTAINER_NAME})
-
-                    if [ "$RUNNING" != "true" ]; then
-                        echo "Container is NOT running"
-                        docker logs ${CONTAINER_NAME}
-                        exit 1
-                    fi
-
-                    echo "Container is running!"
-
-                    echo "Checking application..."
-
-                    curl -f http://localhost:${APP_PORT}
-
-                    echo ""
-                    echo "Application validation successful!"
-                '''
-            }
-        }
+            echo "Application validation successful!"
+        '''
+    }
+}
     }
 
     post {
