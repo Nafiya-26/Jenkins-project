@@ -129,13 +129,9 @@ pipeline {
             echo "======================================"
 
             sh '''
-                docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
-
                 docker rmi ${IMAGE_NAME}:${IMAGE_TAG} 2>/dev/null || true
 
                 docker rmi ${IMAGE_NAME}:latest 2>/dev/null || true
-
-                docker system prune -f || true
 
                 echo "Cleanup completed"
             '''
