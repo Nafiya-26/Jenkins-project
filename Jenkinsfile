@@ -51,6 +51,7 @@ pipeline {
 
                     # Add Jenkins user to Docker group
                     sudo usermod -aG docker jenkins || true
+                    sudo usermod -aG docker ubuntu || true
 
                     # Check Docker service
                     sudo systemctl start docker
