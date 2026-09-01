@@ -50,6 +50,7 @@ pipeline {
                     echo "====================================="
 
                     # Add Jenkins user to Docker group
+                    whoami
                     sudo usermod -aG docker jenkins || true
                     sudo usermod -aG docker ubuntu || true
 
