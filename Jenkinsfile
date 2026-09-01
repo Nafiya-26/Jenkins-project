@@ -55,7 +55,7 @@ pipeline {
                     sudo usermod -aG docker ubuntu || true
                     newgrp docker
 
-                    # Check Docker service
+                    # Check Docker service.
                     sudo systemctl start docker
                     sudo systemctl enable docker
 
