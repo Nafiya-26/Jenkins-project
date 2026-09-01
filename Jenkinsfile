@@ -45,7 +45,7 @@ pipeline {
         stage('Configure Docker Access') {
             steps {
                 sh '''
-                    echo "======================================"
+                    echo "====================================="
                     echo "Configuring Docker access"
                     echo "====================================="
 
