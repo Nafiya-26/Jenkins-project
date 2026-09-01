@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nafiya — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+  <span class="mark">N.</span>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Nafiya builds things<br>worth using.</h1>
+    <p class="hero-sub">
+      A developer &amp; designer who cares about the small details —
+      the ones people feel before they can name them.
+    </p>
+  </section>
+
+  <section id="work" class="work">
+    <h2>Selected work</h2>
+
+    <a class="row" href="#">
+      <span class="row-title">Orchard — grocery delivery app</span>
+      <span class="row-role">Product design, front end</span>
+      <span class="row-year">2025</span>
+    </a>
+    <a class="row" href="#">
+      <span class="row-title">Kestrel — analytics dashboard</span>
+      <span class="row-role">Full-stack build</span>
+      <span class="row-year">2024</span>
+    </a>
+    <a class="row" href="#">
+      <span class="row-title">Lumen — personal finance tool</span>
+      <span class="row-role">Design system &amp; UI</span>
+      <span class="row-year">2023</span>
+    </a>
+    <a class="row" href="#">
+      <span class="row-title">Northwind — brand website</span>
+      <span class="row-role">Front end, animation</span>
+      <span class="row-year">2023</span>
+    </a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>
+      I'm Nafiya, a designer and developer working across product,
+      brand, and code. I like projects that need both — where the
+      interface has to be thought through as carefully as the logic
+      behind it. Previously worked with early-stage teams to take
+      ideas from a sketch to something people actually rely on.
+    </p>
+    <ul class="skills">
+      <li>Python</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Figma</li>
+      <li>HTML &amp; CSS</li>
+      <li>Flask</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let's talk</h2>
+    <p>Have a project in mind or just want to say hello?</p>
+    <a class="contact-link" href="mailto:hello@nafiya.dev">hello@nafiya.dev</a>
+    <div class="social">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>&copy; 2026 Nafiya. Built with care.</span>
+</footer>
+
+</body>
+</html>
